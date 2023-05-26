@@ -21,7 +21,7 @@ function TodoApp({ initialTodos }) {
 
   /** add a new todo to list */
   function create(newTodo) {
-    setTodos(todos => [...todos, { ...newTodo, id: uuid() }]);
+    setTodos(todos => [...todos, { ...newTodo, completed:false, id: uuid() }]);
   }
 
   /** update a todo with updatedTodo */
@@ -32,6 +32,14 @@ function TodoApp({ initialTodos }) {
   /** delete a todo by id */
   function remove(id) {
     setTodos(todos => todos.filter(todo => todo.id !== id));
+  }
+
+  /** complete or uncomplete a todo by id */
+  function complete(id, isCompleted) {
+    let updatedTodo = todos.find(todo => todo.id === id)
+    updatedTodo.completed = isCompleted;
+
+    setTodos(todos.map((todo) => todo.id === id ? updatedTodo : todo));
   }
 
 
@@ -45,6 +53,7 @@ function TodoApp({ initialTodos }) {
               todos={todos}
               update={update}
               remove={remove}
+              complete={complete}
             /> :
             <span className="text-muted">You have no todos.</span>}
         </div>
@@ -54,7 +63,7 @@ function TodoApp({ initialTodos }) {
           {!!todos.length &&
             <section className="mb-4">
               <h3>Top Todo</h3>
-              <TopTodo todos={todos} />
+              <TopTodo todos={todos} complete={complete}/>
             </section>}
 
           <section>
