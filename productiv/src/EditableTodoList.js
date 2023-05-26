@@ -12,7 +12,7 @@ import EditableTodo from "./EditableTodo";
  */
 
 function EditableTodoList({ todos, update, remove }) {
- 
+
   return (
     <div>
       {todos.map(t =>
@@ -20,7 +20,7 @@ function EditableTodoList({ todos, update, remove }) {
           key={t.id}
           todo={t}
           update={update}
-          remove={() => remove(t.id)}//TODO:
+          remove={remove}
         />
       )}
     </div>

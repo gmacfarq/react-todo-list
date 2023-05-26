@@ -10,8 +10,8 @@ import React from "react";
 
 function Todo({todo}) {
   //const [todo, setTodo] = useState(todo)
-  console.log(todo);
-  console.log(todo.title);
+  //console.log(todo);
+  //console.log(todo.title);
 
   return (
      <div className="Todo">

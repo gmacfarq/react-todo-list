@@ -14,15 +14,15 @@ import TodoForm from "./TodoForm";
 
 function EditableTodo({ todo, update, remove }) {
   const [isEditing, setIsEditing] = useState(false);
-  console.log("editable todo", todo);
+  //console.log("editable todo", todo);
   /** Toggle if this is being edited */
   function toggleEdit() {
-    setIsEditing(currEditing => !currEditing);//TODO:
+    setIsEditing(currEditing => !currEditing);
   }
 
   /** Call remove fn passed to this. */
   function handleDelete() {
-    remove();//TODO: todo.id
+    remove(todo.id);
   }
 
   /** Edit form saved; toggle isEditing and update in ancestor. */
