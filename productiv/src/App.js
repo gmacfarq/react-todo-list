@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import testTodos from "./initTodos";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
+import InspoQuote from './InspoQuote'
 
 /** Site application.
  *
@@ -18,6 +19,8 @@ function App() {
           <div className="container">
             <h1>Prøductïv</h1>
             <p className="lead">The best name in todo list management.</p>
+            <InspoQuote />
+
           </div>
         </header>
 
